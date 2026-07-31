@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Session outcome — Focus Log</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell narrow-shell">
+    <a class="text-link" href="history.html">← History</a>
+    <section class="panel">
+      <p class="eyebrow">Session complete</p>
+      <h1 id="task-title">Add an outcome</h1>
+      <div id="session-meta" class="session-meta"></div>
+
+      <label for="outcome">What did you learn, accomplish, decide, or clarify?</label>
+      <textarea id="outcome" rows="7" placeholder="Example: Understood how the inclinometer reconstructs pitch and roll from gravity."></textarea>
+
+      <div class="button-row">
+        <button id="save-button" class="primary-button" type="button">Save session</button>
+        <button id="skip-button" class="secondary-button" type="button">Save without outcome</button>
+      </div>
+      <p id="message" class="error" role="alert"></p>
+    </section>
+  </main>
+  <script src="outcome.js"></script>
+</body>
+</html>

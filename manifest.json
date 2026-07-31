@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Log",
+  "version": "0.2.0",
+  "description": "Track focused sessions with a task, start/stop time, and outcome.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "action": {
+    "default_title": "Focus Log",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.svg",
+      "32": "icons/icon-32.svg",
+      "48": "icons/icon-48.svg",
+      "96": "icons/icon-96.svg"
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "options_ui": {
+    "page": "history.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon-16.svg",
+    "32": "icons/icon-32.svg",
+    "48": "icons/icon-48.svg",
+    "96": "icons/icon-96.svg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "focus-log@example.local",
+      "strict_min_version": "121.0"
+    }
+  }
+}

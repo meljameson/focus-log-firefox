@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus Log</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="popup-body">
+  <main class="popup-shell">
+    <header class="popup-header">
+      <div>
+        <h1>Focus Log</h1>
+        <p>Record what you focused on.</p>
+      </div>
+      <button id="history-button" class="icon-button" type="button" title="Open history" aria-label="Open history">☰</button>
+    </header>
+
+    <section id="idle-view">
+      <label for="task">Task</label>
+      <textarea id="task" rows="3" placeholder="What are you focusing on?"></textarea>
+
+      <div class="field-row">
+        <label for="duration">Minutes</label>
+        <input id="duration" type="number" min="1" max="240" value="30">
+      </div>
+
+      <button id="start-button" class="primary-button" type="button">Start session</button>
+      <p id="idle-error" class="error" role="alert"></p>
+    </section>
+
+    <section id="active-view" hidden>
+      <div class="status-pill">In progress</div>
+      <h2 id="active-task"></h2>
+      <div id="countdown" class="countdown">30:00</div>
+      <p id="started-at" class="muted"></p>
+      <button id="stop-button" class="danger-button" type="button">Stop session</button>
+    </section>
+
+    <section id="pending-view" hidden>
+      <div class="status-pill">Outcome needed</div>
+      <h2 id="pending-task"></h2>
+      <p class="muted">This session ended. Add what you learned or accomplished.</p>
+      <button id="finish-button" class="primary-button" type="button">Add outcome</button>
+    </section>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

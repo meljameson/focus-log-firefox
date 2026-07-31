@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus Log history</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Focus Log</p>
+        <h1>Session history</h1>
+        <p class="muted">Your data stays in Firefox extension storage.</p>
+      </div>
+      <div class="button-row">
+        <button id="export-button" class="secondary-button" type="button">Export CSV</button>
+        <button id="clear-button" class="danger-outline-button" type="button">Clear all</button>
+      </div>
+    </header>
+
+    <section class="panel manual-panel">
+      <div class="manual-panel-heading">
+        <div>
+          <p class="eyebrow">Forgot to start the timer?</p>
+          <h2>Add a manual log</h2>
+          <p class="muted">Record work you already did. It will appear in the table and CSV export.</p>
+        </div>
+      </div>
+
+      <div class="manual-form-grid">
+        <div>
+          <label for="manual-date">Date</label>
+          <div class="date-input-wrap"><input id="manual-date" type="date"></div>
+        </div>
+        <div>
+          <label for="manual-start">Start</label>
+          <div class="date-input-wrap"><input id="manual-start" type="time"></div>
+        </div>
+        <div>
+          <label for="manual-stop">Stop</label>
+          <div class="date-input-wrap"><input id="manual-stop" type="time"></div>
+        </div>
+        <div class="manual-task-field">
+          <label for="manual-task">Task</label>
+          <input id="manual-task" type="text" placeholder="GNC sidequest">
+        </div>
+        <div class="manual-outcome-field">
+          <label for="manual-outcome">Outcome</label>
+          <textarea id="manual-outcome" rows="2" placeholder="What did you learn, finish, decide, or clarify?"></textarea>
+        </div>
+      </div>
+      <div class="manual-form-actions">
+        <button id="manual-save" class="primary-button compact-button" type="button">Add manual log</button>
+        <p id="manual-message" class="form-message" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <div class="summary-card"><span>Sessions</span><strong id="session-count">0</strong></div>
+      <div class="summary-card"><span>Focused time</span><strong id="total-time">0m</strong></div>
+      <div class="summary-card"><span>Today</span><strong id="today-count">0</strong></div>
+    </section>
+
+    <section class="table-panel">
+      <div class="table-toolbar">
+        <label for="search">Search</label>
+        <input id="search" type="search" placeholder="Task or outcome">
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Start</th>
+              <th>Stop</th>
+              <th>Task</th>
+              <th>Outcome</th>
+              <th>Duration</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="session-rows"></tbody>
+        </table>
+      </div>
+      <p id="empty-state" class="empty-state">No sessions yet. Start a timer or add a manual log above.</p>
+    </section>
+  </main>
+  <script src="history.js"></script>
+</body>
+</html>
